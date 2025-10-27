@@ -1,81 +1,292 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-  	<meta charset="utf-8">
-  	<meta name="description" content="Your description goes here">
-  	<meta name="keywords" content="one, two, three">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<title>Blank Template</title>
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+img{
+  max-width: 100%;
+  display: block;
+}
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
 
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">	
-	</head>
-	<body>
+.clear {
+	clear: both;
+}
 
-		<header>
-			<img src="hamburg.png" alt="menu">
-			<nav>
-				<ul>
-					<a href="#"><li>First link</li></a>
-					<a href="#"><li>Second link</li></a>
-					<a href="#"><li>Third link</li></a>
-					<a href="#"><li>Fourth link</li></a>
-				</ul>
-			</nav>
-			<span class="source">Source</span>
-			<a href="#"><span class="button2">Button</span></a>
-		</header>
+:root {
+  --primarycolor: rgb(48, 70, 89)
+  
+}
 
-		<main>
-			<section class="group">
-			<span class="tagline">TAGLINE</span>
-			<h1>Source helps creators do more of what they love</h1>
-			<input type="text" placeholder="Placeholder">
-			<a href="#"><span class="button">Button</span></a>
-			<p>A device that enables collaboration will lessen the chance of work having to be completely redone.</p>
-			
-			</section>
-			<img class="imgimg" src="background.png" alt="bg">
-			<section class="features">
-				<section class="f1">
-					<img src="logo1.png" alt="logo1">
-					<h3>Feature one</h3>
-					<p>In such a test, the user performs realistic tasks by interacting with the paper prototype</p>
-					<span class="link"><a href="#">First link ></a> </span>
-				</section>
-				<section class="f2">
-					<img src="logo2.png" alt="logo2">
-					<h3>Feature two</h3>
-					<p>Three techniques of paper prototyping used for usability testing are comps, wireframes</p>
-					<span class="link"><a href="#">Second link ></a></span>
-				</section>
-				<section class="f3">
-					<img src="logo3.png" alt="logo3">
-					<h3>Feature three</h3>
-					<p>Rapid prototyping involves a group of designers who each create a paper prototype</p>
-					<span class="link"><a href="#">Third link ></a></span>
-					
-				</section>
-				<section class="f4">
-					<img src="logo4.png" alt="logo4">
-					<h3>Feature four</h3>
-					<p>Functionality is similarly unimportant, but in this case are closer to the final product</p>
-					<span class="link"><a href="#">Fourth link ></a></span>
-				</section>
-			</section>
-		</main>
+:root {
+  --bgcolor: rgb(245, 249, 252)
+}
 
-		<section>
-			<h2>Collecting information about the problem</h2>
-			<p>In the context of information architecture, information is separate from both knowledge and data, and lies nebulously between them</p>
-			<section class="box"></section>
-		</section>
+a{
+  text-decoration: none;
+  color: inherit;
+}
 
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
-</html>
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  font-family: "Source Sans 3", sans-serif;   
+  font-size: 12px;
+  background: rgb(245, 249, 252);
+  min-width: 465px;
+}
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+@media( min-width:501px) {
+  header {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header img{
+    display: none;
+  }
+
+  .source{
+    order: -1;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--primarycolor);
+  }
+
+  header nav {
+    width: 40%;
+  }
+
+  header nav ul{
+      padding-inline-start: 0px;
+  }
+
+   header nav ul li{
+      color: var(--primarycolor);
+      font-size: 1rem;
+      font-weight: bold;
+  }
+
+  .button2 {
+    border: 1px solid var(--primarycolor);
+    background-color: var(--primarycolor);
+    padding: 5px 20px;
+    color: var(--bgcolor);
+  }
+
+  .group {
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    padding-right: 22rem;
+    min-width: 550px;
+    max-width: 580px;
+  }
+
+  .imgimg{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 2rem;
+    width: 50vw;
+    z-index: 0;
+  }
+main{
+  padding: 75px;
+  background-color: rgb(245, 249, 252);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+}
+/* footer {
+
+}  */
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+@media screen and (max-width: 500px) {
+
+  nav{
+    display: none;
+  }
+
+  header {
+    padding: 20px 10px;
+    display: flex;
+    border-bottom: 1px solid gray;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header img {
+    position: absolute;
+    left: 10px;
+    width: 24px;
+    height: auto;
+  }
+
+  header .source{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--primarycolor);
+  }
+
+  .tagline{
+    color: rgb(140, 160, 178);
+    font-weight: bold;
+  }
+
+  main{
+    padding: 40px 10px;
+    position: relative;
+  }
+
+  main h1 {
+    color: var(--primarycolor);
+    font-size: 3.5rem;
+    font-weight: light;
+    display: flex;
+    position: relative;
+  }
+
+  main input {
+    width: 100%;
+    height: 3rem;
+    border-radius: 0;
+    padding: 1rem;
+    background-color: rgb(225, 233, 240);
+    border: 0px;
+    font-size: .90rem;
+    color:var(--primarycolor) ;
+    margin-bottom: 20px;
+  }
+
+  main input::placeholder {
+    color: rgb(177, 192, 205);
+  }
+
+  .button{
+    border: 1px solid var(--primarycolor);
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    border-radius: 0;
+    background-color: var(--primarycolor);
+    justify-content: center;
+    align-items: center;
+    color: var(--bgcolor);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  .button:hover {
+    background-color: var(--bgcolor);
+    color: var(--primarycolor);
+  }
+
+  .button:active {
+    transform: translateY(2px);
+  }
+
+  main p{
+    font-size: 1.7rem;
+    color: var(--primarycolor);
+    
+  }
+  
+  .imgimg{
+    position:absolute;
+    right: 0;
+    width: 95%;
+    margin-top: 10px auto ;
+  }
+
+  .features {
+    margin-top: 400px;
+    color: var(--primarycolor);
+  }
+
+  .features section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .features img {
+      width: 30%;
+
+  }
+
+  .features h3 {
+    width: 70%;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  section > span{
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid transparent;
+    padding: 2px;
+  }
+
+  section > span:hover{
+    border-color: var(--primarycolor);
+    border-radius: 5px;
+  }
+
+  section > span:active{
+    transform: translateY(2px);
+  }
+
+  main + section {
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  main + section h2 {
+    color: var(--primarycolor);
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  main + section p {
+    width: 100%;
+    text-align: center;
+    color: var(--primarycolor);
+    font-size: 1rem;
+  }
+
+  .box {
+    height: 500px;
+    width: 100%;
+    background: var(--bgcolor);
+  }
+}
